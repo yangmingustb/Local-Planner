@@ -1,0 +1,15 @@
+<launch>
+
+
+    <!-- lattice planner -->
+    <node pkg="reference_line" type="reference_arclength_node" name="reference_arclength_node" >
+    <!-- <rosparam file="$(find reference_line)/launch/lattice_planner_para.yaml" 
+    # command="load" ns="lattice_planner" />
+    -->
+
+
+    </node>
+    <!-- 运行rviz -->
+    <node pkg="rviz" type="rviz" name="rviz" args="-d $(find reference_line)/launch/config.rviz"/>
+
+</launch>

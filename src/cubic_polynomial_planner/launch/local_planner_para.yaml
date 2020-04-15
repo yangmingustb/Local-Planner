@@ -1,0 +1,44 @@
+
+r_circle: 1.0
+d_circle: 2.0
+obstacle_inflation: 1.5
+
+alpha1: 100
+alpha2: 1
+alpha3: 10
+alpha4: 0.0
+
+longitudinal_num: 5
+lateral_num: 9   # 横向采样个数
+longitudinal_step: 20.0
+lateral_step: 0.5
+lane_width: 3.75
+SampleNumberOnOneSide: lateral_num / 2  
+# sampling number on one side of the reference line
+s0: 0.0
+s_max: longitudinal_num*longitudinal_step
+s_end: s0 + s_max
+refLineRho: lane_width * 0.5
+    
+start_SRho: {{s0, refLineRho, 0.0 * M_PI / 180.0}}
+
+# the frenet coordinates of obstacles
+#obs1,obs2,obs3
+
+obs: {{20, refLineRho - 1},{40, refLineRho + 1},{70, refLineRho - 1}}
+
+obstacleHeading: 0.0 * M_PI / 180.0
+
+# 最后一列的编号
+last_column_id: {lateral_num * (longitudinal_num - 1) + 1, lateral_num * longitudinal_num} 
+
+#    // std::vector<double > waypoints_x={{0.0, 20.0, 50, 100.0, 150.0, 220.0, 300.0, 350.0, 400.0, 430.0, 370.0, 300, 200.0}};
+#    // std::vector<double > waypoints_y={{0.0, 70.0, 100, 120.0, 100.0, 150.0, 180.0, 150.0, 110.0, 20.0, -80.0, -80.0, -80.0}};
+
+waypoints_x: {{0.0, 20.0, 50, 100.0, 150.0, 220.0, 300.0}}
+waypoints_y: {{0.0, 70.0, 100, 120.0, 100.0, 150.0, 180.0}}
+
+vehicle_body_fast_check_circle: 3.0  # body collision fast check circle, the radius is 3.0 m
+vehicle_body_envelope_circle: 1.0   # little circles, the radius is 1.0 m  
+
+show_lattice_in_rviz: false

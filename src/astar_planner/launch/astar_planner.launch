@@ -1,0 +1,19 @@
+<launch>
+<arg name="start_x" default=" 0.0"/>
+<arg name="start_y" default=" 0.0"/>
+<arg name="goal_x" default=" 10.0"/>
+<arg name="goal_y" default=" 10.0"/>
+
+    <node pkg="astar_planner" type="astar_planner_node" name="astar_planner" output="screen" required = "true">
+	  <param name="planning/start_x" value="$(arg start_x)"/>
+      <param name="planning/start_y" value="$(arg start_y)"/>
+      <param name="planning/goal_x" value="$(arg goal_x)"/>
+	  <param name="planning/goal_y" value="$(arg goal_y)"/>
+    </node>
+
+	<node name="map_server" pkg="map_server" type="map_server" args="$(find astar_planner)/maps/map.yaml" />
+    <!-- 运行rviz -->
+     
+    <node pkg="rviz" type="rviz" name="rviz" args="-d $(find astar_planner)/launch/a_star.rviz"/>
+    
+</launch>

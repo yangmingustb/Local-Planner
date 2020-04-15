@@ -1,0 +1,6 @@
+*.pdf
+latticePlannerDoc/
+.idea
+.vscode
+build/
+devel/
