@@ -2,6 +2,8 @@
 
 This repository is dedicated to collecting the latest planners which are developed in ROS.
 
+the project document's url is [mkdocs project](https://yangmingustb.github.io/Local-Planner/)
+
 ## Clone this project
 
 ```
